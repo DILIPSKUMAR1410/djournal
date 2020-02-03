@@ -4,6 +4,8 @@ import {
   UserSession,
   AppConfig,
 } from 'blockstack';
+import Lottie from 'react-lottie';
+import animationData from '../../Assets/read.json'
 const appConfig = new AppConfig()
 const userSession = new UserSession({ appConfig: appConfig })
 class Page extends React.Component {
@@ -60,6 +62,16 @@ class Page extends React.Component {
   }
     
     render() {
+
+        const defaultOptions = {
+      loop: true,
+      autoplay: true,
+      animationData: animationData,
+      rendererSettings: {
+        preserveAspectRatio: 'xMidYMid slice'
+      }
+    }
+
       return (
         <div>
           <div class="land">
@@ -81,6 +93,10 @@ class Page extends React.Component {
                 <p><strong>SecureBox</strong> is your privacy focussed journal.</p>
                 <p>Pour out your thoughts and store them on the decentralized web.</p>
                 <p>Experience the power of Simplicity </p>
+              </div>
+              <div class="rightcol">
+                 <Lottie options={defaultOptions}
+              height={500} width={500}/>
               </div>
             </div>
             <footer><p>Copyright@securebox2019</p></footer>
